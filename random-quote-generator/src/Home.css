@@ -1,0 +1,44 @@
+div {
+  position: relative;
+  z-index: 2;
+}
+
+#quote-box {
+  border-radius: 3px;
+  position: relative;
+  margin: 8% auto auto auto;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+  background-color: #333;
+}
+
+#author {
+  width: 450px;
+  height: auto;
+  clear: both;
+  padding-top: 20px;
+  font-size: 1em;
+  text-align: right;
+}
+
+.button {
+  border: none;
+  border-radius: 3px;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  margin-top: 50px;
+  opacity: 1;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 5px;
+  text-decoration: none;
+  width: 40px;
+}
+
+.buttons {
+  margin-top: 50px;
+}
