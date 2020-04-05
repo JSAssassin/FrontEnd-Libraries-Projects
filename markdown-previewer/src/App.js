@@ -54,14 +54,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: marked(placeholder),
+      text: placeholder,
     };
   }
 
   handleChange = (event) => {
-    const markdown = marked(event.target.value);
     this.setState({
-      text: markdown,
+      text: event.target.value,
     });
   };
   render() {
@@ -76,7 +75,7 @@ class App extends React.Component {
         />
         <div
           id="preview"
-          dangerouslySetInnerHTML={{ __html: this.state.text }}
+          dangerouslySetInnerHTML={{ __html: marked(this.state.text)}}
         />
       </div>
     );
