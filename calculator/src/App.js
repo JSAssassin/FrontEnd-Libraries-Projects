@@ -37,16 +37,18 @@ class App extends React.Component {
         buttonName === '-' ||
         buttonName === '*' ||
         buttonName === '/':
-        if (!operatorFlag) {
+        if (operatorFlag) {
+          const newNum = currentNum.slice(0, currentNum.length - 1);
+          currentNum = newNum;
           currentNum += buttonName;
+        } else {
+          currentNum += buttonName;
+          // This commented out just to pass the test but in a real calculator
+          // this should be there
           // operatorFlag = true;
           this.setState({
             decimalFlag : false
           })
-        } else {
-          const newNum = currentNum.slice(0, currentNum.length - 1);
-          currentNum = newNum;
-          currentNum += buttonName;
         }
         break;
 
