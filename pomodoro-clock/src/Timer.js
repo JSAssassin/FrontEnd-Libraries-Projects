@@ -6,11 +6,10 @@ export default function Timer(props) {
     breakLength,
     elapsedSeconds,
     onResetClicked,
-    onStartTimerClicked,
-    onStopTimerClicked,
-    isSession
+    onStartStopClicked,
+    isSession,
   } = props;
-  let totalSeconds = isSession ? (sessionLength * 60) : (breakLength * 60);
+  let totalSeconds = isSession ? sessionLength * 60 : breakLength * 60;
   let timeleft = totalSeconds - elapsedSeconds;
 
   var min = Math.floor(timeleft / 60);
@@ -18,20 +17,16 @@ export default function Timer(props) {
   seconds = Math.round(seconds * 100) / 100;
   var result = min < 10 ? '0' + min : min;
   result += ':' + (seconds < 10 ? '0' + seconds : seconds);
-  const timerLabel = isSession ? 'Session' : 'Break'
+  const timerLabel = isSession ? 'Session' : 'Break';
 
   return (
-    <div >
+    <div>
       <h1 id="timer-label">{timerLabel}</h1>
       <h2 id="time-left">{result}</h2>
-      <div id="start_stop">
-        <button onClick={onStartTimerClicked}>
-          <i className="fas fa-play"></i>
-        </button>
-        <button onClick={onStopTimerClicked}>
-          <i className="fas fa-stop"></i>
-        </button>
-      </div>
+      <button id="start_stop" onClick={onStartStopClicked}>
+        <i className="fas fa-play"></i>
+        <i className="fas fa-stop"></i>
+      </button>
       <button id="reset" onClick={onResetClicked}>
         <i className="fas fa-sync-alt"></i>
       </button>
